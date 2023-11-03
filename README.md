@@ -1,10 +1,10 @@
 # Sistema de controle de acesso com Interface Web e API REST
-###1. Nomes dos membros do grupo:
+### 1. Nomes dos membros do grupo:
 
 * Lecio Alves
 * Matheus
 
-###2. Explicação do sistema:
+### 2. Explicação do sistema:
 
 O sistema é composto de um servidor web com interface em html, uma API e um banco de dados. 
 Os usuários do sistema são os usuários das fechadura e um administrador.
@@ -14,7 +14,7 @@ Este sistema foi construído na linguagem Python utilizando o ORM (Object Relati
 A pasta api contém a definição do endpoint para acesso das fechaduras ao sistema, cuja lógica de negócio é definida em uma classe.
 
 
-###3. Eexplicação das tecnologias utilizadas.
+### 3. Eexplicação das tecnologias utilizadas.
 * Debian 9 64 Bit - Sistema operacional utilizado
 * Python 3.5 - Linguagem de programação
 * Python pip - Gerenciador de pacotes da linguagem Python

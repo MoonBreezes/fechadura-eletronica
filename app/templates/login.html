@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title_content %}     
+    <title>Login - Fechadura Eletrônica</title>
+{% endblock %}
+{% block body_content %}
+<h3 class="title">Login</h3>
+    <form method="POST" action="/login">
+        <div class="control">
+            <input type="username" name="username" placeholder="ID de Usuário" autofocus="">
+        </div>
+        <div class="control">
+            <input type="password" name="password" placeholder="Senha">
+        </div>
+        <label class="checkbox">
+            <input type="checkbox" name="remember">
+            Remember me
+        </label>
+        <button class="">Login</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title_content %} {% endblock %} 
+    <style>
+    	body {
+  			background-color: light-blue;
+            font-family: "Lucida Console", "Courier New", monospace;
+		}
+			
+        .post { /* ?? */
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        h1 {
+          color: red;
+          text-align: center;
+        }
+
+        p {
+          font-family: verdana;
+          font-size: 20px;
+        }
+        nav ul a { /* tags: body -> nav -> a -> text */
+            color: #000000;
+            font-size: 1em;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000000;
+            background-color: #f0ffff;
+            
+        }
+        a:hover {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        .alert_fail {  /* flash alerts */
+            padding: 21px;
+            margin: 2px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+        .alert_ok {  /* flash alerts */
+            padding: 21px;
+            margin: 2px;
+            color: #088100;
+            background-color: #D5FFD9;
+        }
+        .alert_warn {  /* flash alerts */
+            padding: 21px;
+            margin: 2px;
+            color: #978600;
+            background-color: #FFF6AE;
+        }
+        table, th, td {
+          border:1px solid black;
+        }
+}
+    </style> 
+</head>
+<body>
+<nav class="header">
+	<ul>
+      <a href="{{ url_for('main.index') }}">Listar Acessos</a> 
+      <a href="{{ url_for('main.users') }}">Conceder Permissões</a>
+      <a href="{{ url_for('main.rooms') }}">Cadastrar Salas</a>
+      {#% if current_user.get_username == '0' %}
+        <a href="{{ url_for('main.rooms') }}">Cadastrar Salas</a>
+      {% endif %#}
+      {% if current_user.is_authenticated %}
+        <a href="{{ url_for('auth.logout') }}">Sair</a>       
+      {% else %}
+        <a href="{{ url_for('auth.login') }}">Entrar</a> 
+      {% endif %}
+      
+      <a href="{{ url_for('main.help') }}">Ajuda</a> 
+      <a href="/api">API</a> 
+</ul>
+     </nav>
+
+    <hr>
+    <div class="content">
+        {% for type, message in get_flashed_messages(with_categories=true) %}
+            <div class="{{ type }}">{{ message }}</div>
+        {% endfor %}
+
+        {% block body_content %} {% endblock %}
+    </div>
+</body>
+</html>
+
+</body>
+</html>
+
+
+
